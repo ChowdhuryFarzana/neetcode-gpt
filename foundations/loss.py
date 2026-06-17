@@ -11,7 +11,8 @@ class Solution:
         # return round(your_answer, 4)
         n = len(y_true)
         y_pred = y_pred + 10**-7
-        Lx = y_true * np.log(y_pred) + (1 - y_true) * np.log(1-y_pred)
+        for i in range(n):
+           Lx = y_true * np.log(y_pred) + (1 - y_true) * np.log(1-y_pred)
         L = (-1/n) * np.sum(Lx)
         
         return round(L, 4)
